@@ -4,7 +4,7 @@ import { Keg }        from './keg'
 @Component({
   selector: 'add-keg',
   template: `
-  <div *ngIf="showForm === true">
+  <div class="addForm" *ngIf="showForm === true">
   <form class="newKeg">
     <div class="form-group">
       <label for='brand'>Keg Brand</label>
@@ -25,7 +25,14 @@ import { Keg }        from './keg'
     <button (click)="submitForm(newBrand.value, newName.value, newABV.value, newPrice.value); newBrand.value = ''; newName.value = ''; newABV.value = ''; newPrice.value = '';">Add Keg</button>
   </form>
   </div>
-  `
+  `,
+  styles: [
+    `
+    .addForm {
+      margin-top: 50px;
+    }
+    `
+  ]
 })
 
 export class AddKegComponent {
