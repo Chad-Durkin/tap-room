@@ -1,25 +1,22 @@
-<div class="beerMenu">
+<div class="beerMenu" *ngIf="lowKegs().length > 0">
   <h1 class="avgHeader">Kegs that are almost empty</h1>
   <div class="row">
     <div class="col-md-4">
       <h3>High Alcohol Content</h3>
       <div *ngFor="let keg of childKegsList">
-        <div *ngIf="keg.pints <= 10 && keg.pints > 0">
-          <!-- <div *ngIf="keg.alcoholContent >= 7">
-
-          </div> -->
-          <ul>
-            <li [class.selected]="keg === selectedKeg">
-              <span class="kegInfo">
-                <span class="indKeg"><span class="kegName">{{keg.name}}</span> By: <span class="kegBrand">{{keg.brand}}</span></span><br>
-                Alcohol Pecentage: {{keg.alcoholContent}}%<br>
-                Price: {{keg.price}}$ a Pint<br>
-                Pints Remaining: {{keg.pints}} </span>
-                <!-- Edit Keg -->
-                <button (click)="childSellPint(keg)">Sell Pint</button>
-                <button (click)="childOnSelect(keg)">Edit</button>
-              </li>
-            </ul>
+        <div *ngIf="keg.pints <= 10 && keg.pints > 0 && keg.alcoholContent >= 7">
+            <ul>
+              <li [class.selected]="keg === selectedKeg">
+                <span class="kegInfo">
+                  <span class="indKeg"><span class="kegName">{{keg.name}}</span> By: <span class="kegBrand">{{keg.brand}}</span></span><br>
+                  Alcohol Pecentage: {{keg.alcoholContent}}%<br>
+                  Price: {{keg.price}}$ a Pint<br>
+                  Pints Remaining: {{keg.pints}} </span>
+                  <!-- Edit Keg -->
+                  <button (click)="childSellPint(keg)">Sell Pint</button>
+                  <button (click)="childOnSelect(keg)">Edit</button>
+                </li>
+              </ul>
           </div>
         </div>
       </div>

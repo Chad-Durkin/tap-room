@@ -30,8 +30,9 @@ import { Keg }        from './keg';
   `,
   styles: [`
     .beerSelection {
-      background-color: #52A77E;
+      background-color: #364D7F;
       padding: 20px;
+      color: #BE6945;
     }
     .kegInfo {
       font-weight: bold;
@@ -63,9 +64,9 @@ export class AppComponent {
     new Keg('Sierra Nevada', 'Nooner', 4.8, 4)
   ];
 
-  fullKegs: Keg[] = function() {
+  fullKegs(): Keg[] {
     var kegArray: Keg[] = [];
-    kegs.forEach(function(keg){
+    this.kegs.forEach(function(keg){
       if(keg.pints <= 124 && keg.pints > 10) {
         kegArray.push(keg);
       }
@@ -73,23 +74,14 @@ export class AppComponent {
     return kegArray;
   };
 
-  lowKegs: Keg[] = function() {
+  emptyKegs(): Keg[] {
     var kegArray: Keg[] = [];
-    kegs.forEach(function(keg){
-      if(keg.pints <= 10 && keg.pints > 0) {
-        kegArray.push(keg);
-      }
-    })
-    return kegArray;
-  };
-
-  emptyKegs: Keg[] = function() {
-    var kegArray: Keg[] = [];
-    kegs.forEach(function(keg){
+    this.kegs.forEach(function(keg){
       if(keg.pints == 0) {
         kegArray.push(keg);
       }
     })
+    return kegArray;
   };
 
   onSelect(keg: Keg): void{

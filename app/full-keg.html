@@ -6,18 +6,8 @@
       <h3>High Alcohol Content</h3>
       <div *ngFor="let keg of childKegsList">
         <div *ngIf="keg.pints > 10 && keg.alcoholContent >= 7">
-          <ul>
-            <li [class.selected]="keg === selectedKeg">
-              <span class="kegInfo">
-                <span class="indKeg"><span class="kegName">{{keg.name}}</span> By: <span class="kegBrand">{{keg.brand}}</span></span><br>
-                Alcohol Pecentage: {{keg.alcoholContent}}%<br>
-                Price: {{keg.price}}$ a Pint<br>
-                Pints Remaining: {{keg.pints}} </span>
-                <!-- Edit Keg -->
-                <button (click)="childSellPint(keg)">Sell Pint</button>
-                <button (click)="childOnSelect(keg)">Edit</button>
-              </li>
-            </ul>
+
+
           </div>
         </div>
       </div>
@@ -25,18 +15,8 @@
         <h3>Average Alcohol Content</h3>
         <div *ngFor="let keg of childKegsList">
           <div *ngIf="keg.pints > 10 && keg.alcoholContent < 7 && keg.alcoholContent >= 5">
-            <ul>
-              <li [class.selected]="keg === selectedKeg">
-                <span class="kegInfo">
-                  <span class="indKeg"><span class="kegName">{{keg.name}}</span> By: <span class="kegBrand">{{keg.brand}}</span></span><br>
-                  Alcohol Pecentage: {{keg.alcoholContent}}%<br>
-                  Price: {{keg.price}}$ a Pint<br>
-                  Pints Remaining: {{keg.pints}} </span>
-                  <!-- Edit Keg -->
-                  <button (click)="childSellPint(keg)">Sell Pint</button>
-                  <button (click)="childOnSelect(keg)">Edit</button>
-                </li>
-              </ul>
+
+
             </div>
           </div>
         </div>
@@ -44,18 +24,8 @@
           <h3>Low Alcohol Content</h3>
           <div *ngFor="let keg of childKegsList">
             <div *ngIf="keg.pints > 10 && keg.alcoholContent < 5 && keg.alcohalContent >= 0">
-                <ul>
-                  <li [class.selected]="keg === selectedKeg">
-                    <span class="kegInfo">
-                      <span class="indKeg"><span class="kegName">{{keg.name}}</span> By: <span class="kegBrand">{{keg.brand}}</span></span><br>
-                      Alcohol Pecentage: {{keg.alcoholContent}}%<br>
-                      Price: {{keg.price}}$ a Pint<br>
-                      Pints Remaining: {{keg.pints}} </span>
-                      <!-- Edit Keg -->
-                      <button (click)="childSellPint(keg)">Sell Pint</button>
-                      <button (click)="childOnSelect(keg)">Edit</button>
-                    </li>
-                  </ul>
+
+
                 </div>
             </div>
           </div>

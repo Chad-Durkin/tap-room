@@ -28,6 +28,16 @@ export class LowKegComponent {
     this.childSelectedKeg.emit(this.theKeg);
   }
 
+  lowKegs(): Keg[] {
+    var kegArray: Keg[] = [];
+    this.childKegsList.forEach(function(keg){
+      if(keg.pints <= 10 && keg.pints > 0) {
+        kegArray.push(keg);
+      }
+    })
+    return kegArray;
+  };
+
   childSellPint(chosenKeg: Keg) {
     this.soldPint = chosenKeg;
     this.soldPint.pints -= 1;

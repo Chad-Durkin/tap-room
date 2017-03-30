@@ -37,4 +37,14 @@ export class EmptyKegComponent {
     this.pintsSold += 1;
     this.childTotalPints.emit(this.pintsSold);
   }
+
+  emptyKegs(): Keg[] {
+    var kegArray: Keg[] = [];
+    this.childKegsList.forEach(function(keg){
+      if(keg.pints == 0) {
+        kegArray.push(keg);
+      }
+    })
+    return kegArray;
+  };
 }
