@@ -22,6 +22,10 @@ import { Keg}   from './keg';
         <label>Keg Price: </label> {{keg.price}}
         <input [(ngModel)]="keg.price" placeholder="Keg Price">
       </div>
+      <div class="form-group">
+        <label>Keg Pints: </label> {{keg.pints}}
+        <input [(ngModel)]="keg.pints" placeholder="Keg Pints">
+      </div>
     `
 })
 
