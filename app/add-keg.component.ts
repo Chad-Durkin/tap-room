@@ -5,6 +5,7 @@ import { Keg }        from './keg'
   selector: 'add-keg',
   template: `
   <div class="addForm" *ngIf="showForm === true">
+  <h1>Add a new keg</h1>
   <form class="newKeg">
     <div class="form-group">
       <label for='brand'>Keg Brand</label>
