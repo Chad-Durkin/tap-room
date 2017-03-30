@@ -4,7 +4,9 @@ import { Keg }  from './keg'
 @Component({
   selector: 'keg-display',
   template: `
-    <high-abv [childKegsList]="kegsList" (childSelectedKeg)="onSelect($event)" (childOPSellPint)="sellPint($event)" (childTotalSales)="totalSalesCall($event)" (childTotalPints)="totalPintsSold($event)">High ABV Content Loading...</high-abv>
+    <full-keg [childKegsList]="kegsList" (childSelectedKeg)="onSelect($event)" (childOPSellPint)="sellPint($event)" (childTotalSales)="totalSalesCall($event)" (childTotalPints)="totalPintsSold($event)">Full Keg Content Loading...</full-keg>
+    <low-keg [childKegsList]="kegsList" (childSelectedKeg)="onSelect($event)" (childOPSellPint)="sellPint($event)" (childTotalSales)="totalSalesCall($event)" (childTotalPints)="totalPintsSold($event)">Low Keg Content Loading...</low-keg>
+    <empty-keg [childKegsList]="kegsList" (childSelectedKeg)="onSelect($event)" (childOPSellPint)="sellPint($event)" (childTotalSales)="totalSalesCall($event)" (childTotalPints)="totalPintsSold($event)">Empty Keg Content Loading...</empty-keg>
   `
 })
 

@@ -5,7 +5,9 @@ import { AppComponent }         from './app.components';
 import { AddKegComponent }      from './add-keg.component';
 import { KegDetailComponent }   from './keg-detail.component';
 import { KegDisplayComponent }  from './keg-display.component';
-import { HighAbvComponent }     from './high-abv.component';
+import { FullKegComponent }     from './full-keg.component';
+import { LowKegComponent }     from './low-keg.component';
+import { EmptyKegComponent }     from './empty-keg.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { HighAbvComponent }     from './high-abv.component';
                   AddKegComponent,
                   KegDetailComponent,
                   KegDisplayComponent,
-                  HighAbvComponent ],
+                  FullKegComponent,
+                  LowKegComponent,
+                  EmptyKegComponent ],
   bootstrap:    [ AppComponent ]
 })
 

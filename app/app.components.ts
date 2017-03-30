@@ -1,12 +1,6 @@
 import { Component }  from '@angular/core';
 import { Keg }        from './keg';
-//
-// const KEGS: Keg[] = [];
-// KEGS.push(new Keg('Sierra Nevada', 'Torpedo', 7.4, 145));
-// KEGS.push(new Keg('Sierra Nevada', 'Old Chico', 6.4, 145));
-// KEGS.push(new Keg('Sierra Nevada', 'Bigfoot Ale', 7.1, 145));
-// KEGS.push(new Keg('Sierra Nevada', 'Pale Ale', 5.9, 130));
-// KEGS.push(new Keg('Sierra Nevada', 'Nooner', 4.8, 130));
+
 
 @Component({
   selector: 'my-app',
@@ -19,7 +13,6 @@ import { Keg }        from './keg';
       <h2>Pints Sold: {{pintsSold}}!</h2>
       <div class="row">
       <keg-display (selectedKeg)="onSelect($event)" (indKegPints)="soldPints($event)" (totalSales)="topTotalSales($event)" (thePintsSold)="totalPintsSold($event)"[kegsList]="kegs">Keg Display Loading...</keg-display>
-      <!-- (soldPints)="kegPintsSold($event)" -->
       <!-- Add Kegs -->
       </div>
       <div class="row">
@@ -69,6 +62,35 @@ export class AppComponent {
     new Keg('Sierra Nevada', 'Pale Ale', 5.9, 4),
     new Keg('Sierra Nevada', 'Nooner', 4.8, 4)
   ];
+
+  fullKegs: Keg[] = function() {
+    var kegArray: Keg[] = [];
+    kegs.forEach(function(keg){
+      if(keg.pints <= 124 && keg.pints > 10) {
+        kegArray.push(keg);
+      }
+    })
+    return kegArray;
+  };
+
+  lowKegs: Keg[] = function() {
+    var kegArray: Keg[] = [];
+    kegs.forEach(function(keg){
+      if(keg.pints <= 10 && keg.pints > 0) {
+        kegArray.push(keg);
+      }
+    })
+    return kegArray;
+  };
+
+  emptyKegs: Keg[] = function() {
+    var kegArray: Keg[] = [];
+    kegs.forEach(function(keg){
+      if(keg.pints == 0) {
+        kegArray.push(keg);
+      }
+    })
+  };
 
   onSelect(keg: Keg): void{
     this.selectedKeg = keg;
